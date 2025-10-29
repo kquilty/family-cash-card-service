@@ -22,6 +22,9 @@ class SecurityConfig {
                         .requestMatchers("/cashcards/**")
                         .authenticated())
                 .httpBasic(Customizer.withDefaults())
+                // CSRF protection is disabled for this stateless REST API
+                // The API uses HTTP Basic Auth and does not maintain session state
+                // For production use with browser clients, consider enabling CSRF protection
                 .csrf(csrf -> csrf.disable());
         return http.build();
     }
