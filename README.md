@@ -144,6 +144,8 @@ curl -u sarah1:abc123 \
 
 ## Test Users
 
+⚠️ **Security Warning**: The following are test credentials for development only. Never use these in production!
+
 The application includes the following test users:
 
 | Username | Password | Role | Cards |
@@ -154,10 +156,10 @@ The application includes the following test users:
 
 ## Security Features
 
-- **Authentication** - HTTP Basic Authentication
-- **Authorization** - Role-based access control (CARD-OWNER role required)
-- **Ownership Validation** - Users can only access their own cash cards
+- **Authentication** - HTTP Basic Authentication (all endpoints require authentication)
+- **Authorization** - Data-level ownership validation (users can only access their own cash cards)
 - **CSRF Protection** - Disabled for REST API usage
+- **Password Encryption** - BCrypt password encoding
 
 ## Architecture
 
